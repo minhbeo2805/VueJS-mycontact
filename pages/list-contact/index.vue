@@ -1,15 +1,16 @@
 <template>
   <div>
     <Header/>
-    <ListProfile/>
+    <ListContact/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header/Header";
-import ListProfile from "@/components/ListProfile/ListProfile";
+import ListContact from "@/components/ListContact/ListContact";
 
 export default {
+  middleware:'auth',
   async fetch({ store }) {
     await store.dispatch("contact/getSearchContacts", {
       name: "",
@@ -19,7 +20,7 @@ export default {
   },
   components: {
     Header,
-    ListProfile
+    ListContact
   }
 };
 </script>

@@ -12,6 +12,7 @@ import Header from "@/components/Header/Header";
 import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default {
+  middleware:'auth',
   components: {
     Header,
     ContactForm

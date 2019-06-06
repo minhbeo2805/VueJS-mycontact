@@ -1,4 +1,4 @@
-import { callApiAuthenUser } from "../api/contact";
+import { callApiAuthenUser } from "../api/login";
 
 export const state = () => ({
   authenticatedUser: null
@@ -7,14 +7,14 @@ export const state = () => ({
 export const actions = {
   async loginAuthenticate({ commit }, user) {
     let res = await callApiAuthenUser(user);
-    console.log(res);
-    // if (res.data.length > 0) {
-    //   commit("SET_AUTH_USER", res.data);
-    //   return true;
-    // } else {
-    //   commit("REMOVE_AUTH_USER");
-    //   return false;
-    // }
+    console.log(res.data);
+    if (res.data != null) {
+      commit("SET_AUTH_USER", res.data);
+      return true;
+    } else {
+      commit("REMOVE_AUTH_USER");
+      return false;
+    }
   },
   logout({ commit }) {
     commit("REMOVE_AUTH_USER");

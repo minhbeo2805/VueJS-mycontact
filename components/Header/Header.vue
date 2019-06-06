@@ -2,7 +2,7 @@
   <header class="main-header">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
       <nuxt-link tag="el-menu-item" index="1" to="/list-contact">User management</nuxt-link>
-      <el-menu-item index="2" @click="transitRegister">Register</el-menu-item>
+      <el-menu-item index="2" @click="transitRegisterContact">Add contact</el-menu-item>
       <el-menu-item index="3" id="log-out" @click="logout">Log out</el-menu-item>
     </el-menu>
   </header>
@@ -21,7 +21,7 @@ export default {
       this.$message.success("Log out success");
       this.$router.push("/");
     },
-    async transitRegister() {
+    async transitRegisterContact() {
       await this.$store.dispatch("contact/resetContact");
       this.$router.push("/contact-form");
     }

@@ -14,10 +14,10 @@
     </el-container>
     <el-container>
       <el-main>
-        <el-table :data="filteredAllContact"  :default-sort = "{prop: 'name', order: 'descending'}">
+        <el-table :data="filteredAllContact" >
           <el-table-column prop="id" label="Id" width="200px"></el-table-column>
           <el-table-column prop="email" label="Email"></el-table-column>
-          <el-table-column prop="name" sortable label="Name"></el-table-column>
+          <el-table-column prop="name"  label="Name"></el-table-column>
           <el-table-column prop="phone" label="Phone"></el-table-column>
           <el-table-column label="Operation">
             <template slot-scope="contact">

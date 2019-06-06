@@ -58,11 +58,3 @@ export function callApiGetDetail(id) {
             console.log(error);
         })
 }
-
-export function callApiAuthenUser(params) {
-    return axios.post(`/login`, params)
-        .then(response => response)
-        .catch(error => {
-            console.log(error);
-        })
-}

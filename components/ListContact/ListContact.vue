@@ -14,12 +14,12 @@
     </el-container>
     <el-container>
       <el-main>
-        <el-table :data="filteredAllContact" >
-          <el-table-column prop="id" label="Id" width="200px"></el-table-column>
-          <el-table-column prop="email" label="Email"></el-table-column>
-          <el-table-column prop="name"  label="Name"></el-table-column>
-          <el-table-column prop="phone" label="Phone"></el-table-column>
-          <el-table-column label="Operation">
+        <el-table :data="filteredAllContact" style="width: 100%; background: transparent;"  row-style="background: transparent;">
+          <el-table-column prop="id" label="Id" :min-width="10"></el-table-column>
+          <el-table-column prop="email" :min-width="30" label="Email"></el-table-column>
+          <el-table-column prop="name"  :min-width="20" label="Name"></el-table-column>
+          <el-table-column prop="phone" :min-width="20" label="Phone"></el-table-column>
+          <el-table-column label="Operation" :min-width="20">
             <template slot-scope="contact">
               <el-button type="primary" icon="el-icon-edit" @click="editContact(contact.row.id)"></el-button>
               <el-button
@@ -104,12 +104,13 @@ export default {
 
 <style scoped>
 .list-container {
-  margin-top: 4.5rem;
+  padding-top: 0.5rem;
+  margin-top: 3rem;
 }
 .el-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .el-container {
@@ -118,5 +119,6 @@ export default {
 .list-container {
   position: relative;
   z-index: 1;
+  height: 936px;
 }
 </style>

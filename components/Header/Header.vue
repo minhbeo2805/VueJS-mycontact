@@ -1,9 +1,16 @@
 <template>
   <header class="main-header">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-      <nuxt-link tag="el-menu-item" index="1" to="/list-contact">User management</nuxt-link>
-      <el-menu-item index="2" @click="transitRegisterContact">Add contact</el-menu-item>
-      <el-menu-item index="3" id="log-out" @click="logout">Log out</el-menu-item>
+    <el-menu
+      :default-active="activeIndex"
+      class="header-menu"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      mode="horizontal"
+    >
+      <nuxt-link tag="el-menu-item" class="header-btn" index="1" to="/list-contact">Contact list</nuxt-link>
+      <el-menu-item index="2" class="header-btn" @click="transitRegisterContact">Add contact</el-menu-item>
+      <el-menu-item index="3" class="header-btn" id="log-out" @click="logout">Log out</el-menu-item>
     </el-menu>
   </header>
 </template>
